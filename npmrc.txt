@@ -1,3 +1,4 @@
+include=optional
 optional=true
 legacy-peer-deps=false
 auto-install-peers=true
