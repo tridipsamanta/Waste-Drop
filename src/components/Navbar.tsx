@@ -50,10 +50,10 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                className={`px-5 py-2 rounded-lg font-medium transition-all ${
                   isActive(link.path)
                     ? "bg-primary text-primary-foreground"
-                    : "text-foreground hover:bg-secondary"
+                    : "text-foreground hover:bg-secondary hover:text-primary  hover:shadow-md"
                 }`}
               >
                 {link.name}

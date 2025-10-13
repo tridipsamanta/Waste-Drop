@@ -1,5 +1,6 @@
 // Placeholder AI verification logic
-export async function verifyWasteClearing(filePath) {
+export  function verifyWasteClearing(filePath) {
+  //add async
   // TODO: Integrate real AI model or API here
   // For now, always return verified for demo
   return {
