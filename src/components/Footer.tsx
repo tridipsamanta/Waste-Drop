@@ -13,7 +13,7 @@ const Footer = () => {
                 <Leaf className="h-6 w-6 text-primary-foreground" />
               </div>
               <span className="font-bold text-xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                WasteDrop
+                Swachh Setu
               </span>
             </div>
             <p className="text-sm text-muted-foreground">
