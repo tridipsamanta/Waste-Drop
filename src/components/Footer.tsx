@@ -13,7 +13,7 @@ const Footer = () => {
                 <Leaf className="h-6 w-6 text-primary-foreground" />
               </div>
               <span className="font-bold text-xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                WasteDrop
+                Swachh Setu
               </span>
             </div>
             <p className="text-sm text-muted-foreground">
@@ -65,7 +65,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 text-primary" />
-                <span>support@wastedrop.eco</span>
+              <span>support@swachhsetu.eco</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 text-primary" />
@@ -80,7 +80,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>&copy; 2025 WasteDrop Verification. All rights reserved.</p>
+          <p>&copy; 2025 Swachh Setu. All rights reserved.</p>
         </div>
       </div>
     </footer>

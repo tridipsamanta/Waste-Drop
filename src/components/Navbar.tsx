@@ -9,6 +9,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
+    { name: "EcoScan", path: "/ecoscan" },
     { name: "Upload", path: "/upload" },
     { name: "Dashboard", path: "/dashboard" },
     { name: "Marketplace", path: "/marketplace" },
@@ -40,7 +41,7 @@ const Navbar = () => {
               <Leaf className="h-6 w-6 text-primary-foreground" />
             </div>
             <span className="font-bold text-xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              WasteDrop
+              Swachh Setu
             </span>
           </Link>
 

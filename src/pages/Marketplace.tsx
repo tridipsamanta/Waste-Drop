@@ -140,14 +140,14 @@ const Marketplace = () => {
                     <span className="font-medium">{item.weight}</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Seller:</span>
+                    <span className="text-muted-foreground">Buyer:</span>
                     <span className="font-medium">{item.seller}</span>
                   </div>
                 </div>
               </CardContent>
               <CardFooter className="flex justify-between items-center">
                 <div className="text-2xl font-bold text-primary">{item.price}</div>
-                <Button variant="eco">Buy Now</Button>
+                <Button variant="eco">Sell Now</Button>
               </CardFooter>
             </Card>
           ))}

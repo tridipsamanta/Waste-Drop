@@ -48,7 +48,7 @@ const Auth = () => {
               <Leaf className="h-10 w-10 text-primary-foreground" />
             </div>
             <span className="font-bold text-3xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              WasteDrop
+              Swachh Setu
             </span>
           </Link>
 
@@ -101,7 +101,7 @@ const Auth = () => {
               <Leaf className="h-8 w-8 text-primary-foreground" />
             </div>
             <span className="font-bold text-2xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              WasteDrop
+              Swachh Setu
             </span>
           </Link>
 
@@ -196,7 +196,7 @@ const Auth = () => {
                 </div>
                 <div className="relative flex justify-center text-xs uppercase">
                   <span className="bg-card px-2 text-muted-foreground">
-                    {isLogin ? "New to WasteDrop?" : "Already have an account?"}
+                    {isLogin ? "New to Swachh Setu?" : "Already have an account?"}
                   </span>
                 </div>
               </div>

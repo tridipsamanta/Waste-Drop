@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/ui/card";
 import { Progress } from "@/ui/progress";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Scanner from "@/components/Scanner";
 import { toast } from "sonner";
 
 const Upload = () => {
@@ -15,6 +16,10 @@ const Upload = () => {
   const [file, setFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  // Scanner state
+  const [scannerOpen, setScannerOpen] = useState(false);
+
+  // no local stream cleanup here -- Scanner component handles camera lifecycle
 
   const handleUpload = () => {
     if (!file) {
@@ -73,6 +78,16 @@ const Upload = () => {
 
   const handleBrowseClick = () => {
     fileInputRef.current?.click();
+  };
+
+  // Scanner capture handler
+  const handleCapture = (capturedFile: File) => {
+    setFile(capturedFile);
+    setResult(null);
+    setPoints(0);
+    const url = URL.createObjectURL(capturedFile);
+    setPreviewUrl(url);
+    setScannerOpen(false);
   };
 
   const handleRemoveFile = () => {
@@ -153,20 +168,31 @@ const Upload = () => {
                 <div className="flex-1 h-px bg-green-200" />
               </div>
 
-              <Button
-                variant="eco"
-                className="w-full py-4 text-lg font-bold shadow-md"
-                size="lg"
-                onClick={() => {
-                  if (uploading) return;
-                  if (!file) fileInputRef.current?.click();
-                  else handleUpload();
-                }}
-                disabled={uploading}
-              >
-                <Camera className="mr-2 animate-fade-in" />
-                {uploading ? "Processing..." : file ? "Upload & Verify" : "Take Photo or Upload"}
-              </Button>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <Button
+                  variant="eco"
+                  className="w-full py-3 text-lg font-bold shadow-md"
+                  size="lg"
+                  onClick={() => {
+                    if (uploading) return;
+                    if (!file) fileInputRef.current?.click();
+                    else handleUpload();
+                  }}
+                  disabled={uploading}
+                >
+                  <Camera className="mr-2" />
+                  {uploading ? "Processing..." : file ? "Upload & Verify" : "Upload from Device"}
+                </Button>
+
+                <Button
+                  variant="outline"
+                  className="w-full py-3 text-lg font-semibold"
+                  size="lg"
+                  onClick={() => setScannerOpen(true)}
+                >
+                  Scan with Camera
+                </Button>
+              </div>
             </CardContent>
           </Card>
 
@@ -227,6 +253,7 @@ const Upload = () => {
       </div>
 
       <Footer />
+      <Scanner isOpen={scannerOpen} onClose={() => setScannerOpen(false)} onCapture={handleCapture} />
     </div>
   );
 };
