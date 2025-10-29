@@ -147,7 +147,7 @@ const Marketplace = () => {
               </CardContent>
               <CardFooter className="flex justify-between items-center">
                 <div className="text-2xl font-bold text-primary">{item.price}</div>
-                <Button variant="eco">Sell Now</Button>
+                <Button variant="eco">Buy Now</Button>
               </CardFooter>
             </Card>
           ))}
